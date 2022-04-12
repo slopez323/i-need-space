@@ -3,7 +3,6 @@ let long;
 let lat;
 let loc;
 let norad;
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 $('#search').on('click', function () {
     $('.error span').remove();
