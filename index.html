@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,11 @@
     <title>Satellite Viewer</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orelega+One&family=Roboto:wght@400&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="content">
@@ -17,7 +20,7 @@
         <h1>
             When can I see a certain satellite?
         </h1>
-        
+
         <div class="section">
             <div class="row">
                 <h2>
@@ -36,11 +39,25 @@
                 <label>Satellite NORAD</label>
                 <input id="norad" />
             </div>
-            <div class="row">
+            <div class="row error">
                 <button id="search">
                     Search
                 </button>
             </div>
+        </div>
+
+        <div class="section output">
+            <div class="row">
+                <h2>
+                    Time of Next Satellite Pass
+                </h2>
+            </div>
+            <div class="row">
+                <h3 id="satellite"></h3>
+            </div>
+            <div class="row rise">Rise</div>
+            <div class="row culmination">Culmination</div>
+            <div class="row set">Set</div>
         </div>
 
         <div class="section">
@@ -82,13 +99,18 @@
                 </div>
             </div>
             <div class="row">
-                <b>Find more of the brightest satellites' NORAD IDs&nbsp;<a href="https://www.n2yo.com/satellites/?c=1">here</a>.</b>
+                <b>Find more of the brightest satellites' NORAD IDs&nbsp;<a
+                        href="https://www.n2yo.com/satellites/?c=1">here</a>.</b>
             </div>
         </div>
 
     </div>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="apiKey.js"></script>
     <script src="main.js"></script>
 </body>
+
 </html>
