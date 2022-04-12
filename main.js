@@ -1,6 +1,7 @@
 
 let long;
 let lat;
+let loc;
 const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
 $('#search').on('click', function () {
@@ -15,10 +16,15 @@ $('#search').on('click', function () {
 async function getCoords() {
     let httpResponse = await fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/${encodeURI($('#address').val())}.json?access_token=${$('#api-key').val()}`);
     httpResponse = await httpResponse.json();
+    if(httpResponse.message == 'Not Authorized - Invalid Token'){
+        $('.error').append('<span>Invalid API Key.</span>')
+    }
 
     long = httpResponse.features[0].center[0];
 
     lat = httpResponse.features[0].center[1];
+
+    loc = httpResponse.features[0].place_name;
 
     getSatTime(long, lat);
 };
@@ -38,7 +44,7 @@ async function getSatTime(long, lat) {
     let culm = new Date(httpResponse[0].culmination.utc_datetime);
     let set = new Date(httpResponse[0].set.utc_datetime);
 
-    $('#satellite').text(`Satellite ${$('#norad').val()} at ${$('#address').val().toUpperCase()}`);
+    $('#satellite').text(`Satellite ${$('#norad').val()} at ${loc.toUpperCase()}`);
 
     $('.rise').append(`<span>${rise}</span>`);
     $('.culmination').append(`<span>${culm}</span>`);
