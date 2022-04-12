@@ -1,12 +1,10 @@
-* {
-    font-family: 'Roboto', sans-serif;
-    color: #03045e;
-}
 
 body {
     margin: 0;
     padding: 0;
     background-color: #caf0f8;
+    font-family: 'Roboto', sans-serif;
+    color: #03045e;
 }
 
 h1, h2, h3 {
@@ -83,11 +81,18 @@ button:hover {
 .output{
     display: none;
     background-color:darkgoldenrod;
-    color: darkgray;
+}
+
+.rise, .culmination, .set{
+    display: block;
 }
 
 .output span{
+    display: block;
     margin-left: 10px;
+    color: darkslategrey;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
 }
 
 .error span{
